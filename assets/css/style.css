@@ -40,13 +40,14 @@ header {
     background: #ffffff;
     border-bottom: 2px solid #cccccc;
     margin: 0 0 30px;
-    overflow: auto;
     width: 100%;
     position: fixed;
     z-index: 999;
 }
 
-.container {
+.head, .container, .foot {
+    padding-left: 55px;
+    padding-right: 55px;
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
@@ -126,9 +127,6 @@ section {
     background: #ffffff;
     padding: 30px;
     margin: 0 0 40px 0;
-    width: 100%;
-    max-width: 900px;
-    float: left;
     border: 1px solid #dddddd;
 }
 
@@ -220,12 +218,6 @@ input[type=submit] {
     cursor: pointer;
 }
 
-
-/* --------------------------------------------------------------------------- */
-
-
-/* Bonus 1 - adding hover effects to portfolio images and menu links in header */
-
 .portfolio img:hover {
     opacity: 1;
 }
@@ -235,16 +227,95 @@ input[type=submit] {
 }
 
 nav a:hover {
-    color: #ffffff;
-    background: #4aaaa5; /* Bonus 2 - adding color that matched the theme */
+    color: #333333;
+    /* background: #4aaaa5; */
 }
 
 input:focus, textarea:focus {
-    background: #7dddd8; /* Bonus 2 - adding color that matched the theme */
+    background: #7dddd8;
 }
 
-/* Bonus 3 - Sticky footer with calc CSS */
 .wrapper {
-    min-height: calc(100vh - 102px);
+    min-height: calc(100vh - 142px);
     padding: 0;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* Assignment 2 (Media queries / No Bootstrap) */
+
+@media screen and (max-width: 980px) {
+    .container {
+        float: left;
+    }
+    .container, .foot {
+        max-width: 590px;
+    }
+    nav a:last-child {
+        padding-right: 110px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .head, .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container, .foot {
+        max-width: 650px;
+    }
+    nav a:last-child {
+        padding-right: 40px;
+    }
+    img {
+        width: 323px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        position: static;
+        margin-bottom: 20px;
+    }
+    .head {
+        padding-left: 0;
+    }
+    .container, .foot {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        max-width: 475px;
+    }
+    nav {
+        float: none;
+        margin-top: 0;
+        text-align: center;
+    }
+    nav a {
+        color: #999999;
+        text-decoration: none;
+        display: inline-block;
+        margin: 24px 13px 24px 2px;
+        border-left: 1px solid #efefef;
+        line-height: 15px;
+    }
+    nav a:first-child {
+        border-left: 0 none;
+        margin-left: 36px;
+    }
+    nav a:last-child {
+        padding-right: 40px;
+    }
+    img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #logo {
+        width: 100%;
+    }
+    #main {
+        padding-top: 0px;
+    }
 }
