@@ -240,13 +240,26 @@ input:focus, textarea:focus {
 
 
 @media screen and (max-width: 980px) {
+    /* Bonus - Animation */
+    @keyframes resize {
+        from {max-width: 960px;}
+        to {max-width: 650px;}
+    }
+    @keyframes moving {
+        from {padding-right: 55px;}
+        to {padding-right: 110px;}
+    }
     .container {
         float: left;
     }
     .container, .foot, input[type=text], input[type=email], textarea {
+        animation-name: resize;
+        animation-duration: .5s;
         max-width: 650px;
     }
     nav a:last-child {
+        animation-name: moving;
+        animation-duration: .5s;
         padding-right: 110px;
     }
     .wrapper {
@@ -256,7 +269,18 @@ input:focus, textarea:focus {
 }
 
 @media screen and (max-width: 768px) {
+    /* Bonus - Animation */
+    @keyframes resize {
+        from {width: 200px;}
+        to {width: 274px;}
+    }
+    @keyframes moving {
+        from {padding-left: 55px;}
+        to {padding-left: 20px;}
+    }
     .head, .container {
+        animation-name: moving;
+        animation-duration: .5s;
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -270,6 +294,8 @@ input:focus, textarea:focus {
         padding-right: 40px;
     }
     img {
+        animation-name: resize;
+        animation-duration: .5s;
         width: 323px;
     }
     .wrapper {
@@ -279,6 +305,15 @@ input:focus, textarea:focus {
 }
 
 @media screen and (max-width: 640px) {
+    /* Bonus - Animation */
+    @keyframes resize {
+        from {max-width: 650px;}
+        to {max-width: 475px;}
+    }
+    @keyframes moving {
+        from {width: 323px;}
+        to {width: 100%;}
+    }
     header {
         position: static;
         margin-bottom: 20px;
@@ -290,6 +325,8 @@ input:focus, textarea:focus {
         padding-left: 0px;
         padding-right: 0px;
         width: 100%;
+        animation-name: resize;
+        animation-duration: 1s;
         max-width: 475px;
     }
     nav {
@@ -313,6 +350,8 @@ input:focus, textarea:focus {
         padding-right: 40px;
     }
     img, .portfolio, #logo {
+        animation-name: moving;
+        animation-duration: 1s;
         width: 100%;
     }
     img {
