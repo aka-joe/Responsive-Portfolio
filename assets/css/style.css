@@ -196,15 +196,16 @@ label {
 
 input[type=text], input[type=email], textarea {
     display: block;
-    width: 880px;
+    width: 100%;
+    max-width: 960px;
     height: 35px;
     border: 1px solid #dddddd;
-    padding: 0 10px;
+    padding: 0;
     font-size: 14px;
 }
 
 textarea {
-    padding: 10px;
+    padding: 10px 0;
     height: 180px;
     margin-bottom: 20px;
 }
@@ -250,11 +251,15 @@ input:focus, textarea:focus {
     .container {
         float: left;
     }
-    .container, .foot {
-        max-width: 590px;
+    .container, .foot, input[type=text], input[type=email], textarea {
+        max-width: 650px;
     }
     nav a:last-child {
         padding-right: 110px;
+    }
+    .wrapper {
+        min-height: calc(100vh - 102px);
+        padding: 0;
     }
 }
 
@@ -264,6 +269,9 @@ input:focus, textarea:focus {
         padding-right: 20px;
     }
     .container, .foot {
+        float: none;
+        padding-left: 0px;
+        padding-right: 0px;
         max-width: 650px;
     }
     nav a:last-child {
@@ -271,6 +279,10 @@ input:focus, textarea:focus {
     }
     img {
         width: 323px;
+    }
+    .wrapper {
+        min-height: calc(100vh - 142px);
+        padding: 0;
     }
 }
 
@@ -282,9 +294,9 @@ input:focus, textarea:focus {
     .head {
         padding-left: 0;
     }
-    .container, .foot {
-        padding-left: 20px;
-        padding-right: 20px;
+    .container, .foot, input[type=text], input[type=email], textarea {
+        padding-left: 0px;
+        padding-right: 0px;
         width: 100%;
         max-width: 475px;
     }
@@ -317,5 +329,9 @@ input:focus, textarea:focus {
     }
     #main {
         padding-top: 0px;
+    }
+    .wrapper {
+        min-height: calc(100vh - 318px);
+        padding: 0;
     }
 }
